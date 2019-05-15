@@ -11,8 +11,8 @@ class PresentNumberTest {
 
   @Test
   void isNumberPresentCheckTest() {
-    assertTrue(PresentNumber.isNumberPresentCheck(Arrays.asList(1, 2, 6, 8, 2, 8), 6));
-    assertFalse(PresentNumber.isNumberPresentCheck(Arrays.asList(1, 2, 6, 8, 2, 8), 10));
-    assertFalse(PresentNumber.isNumberPresentCheck(Collections.emptyList(), -1));
+    assertTrue(PresentNumber.isNumberPresent(Arrays.asList(1, 2, 6, 8, 2, 8), 6));
+    assertFalse(PresentNumber.isNumberPresent(Arrays.asList(1, 2, 6, 8, 2, 8), 10));
+    assertFalse(PresentNumber.isNumberPresent(Collections.emptyList(), -1));
   }
 }
