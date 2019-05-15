@@ -2,21 +2,17 @@ package ua.ptah.certifications.hacker_rank.van_hack.skill_assessment.DigitalWall
 
 class DigitalWalletTransaction {
 
-  DigitalWalletTransaction() {
-  }
-
-  void addMoney(DigitalWallet digitalWallet, int amount) throws TransactionException {
+  static void addMoney(DigitalWallet digitalWallet, int amount) throws TransactionException {
     if (amount <= 0) {
       throw new TransactionException(TransactionExceptionCode.INVALID_AMOUNT);
     }
     if (digitalWallet.getUserAccessToken() == null) {
       throw new TransactionException(TransactionExceptionCode.USER_NOT_AUTHORIZED);
     }
-
     digitalWallet.setWalletBalance(digitalWallet.getWalletBalance() + amount);
   }
 
-  void payMoney(DigitalWallet digitalWallet, int amount) throws TransactionException {
+  static void payMoney(DigitalWallet digitalWallet, int amount) throws TransactionException {
     if (amount <= 0) {
       throw new TransactionException(TransactionExceptionCode.INVALID_AMOUNT);
     }
@@ -26,7 +22,6 @@ class DigitalWalletTransaction {
     if (digitalWallet.getUserAccessToken() == null) {
       throw new TransactionException(TransactionExceptionCode.USER_NOT_AUTHORIZED);
     }
-
     digitalWallet.setWalletBalance(digitalWallet.getWalletBalance() - amount);
   }
 }
