@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Value;
 
 @Value
-final class StockPriceInfoByDate {
+final class StockPrices {
 
   private final String date;
 

@@ -11,17 +11,14 @@ final class StockListingResponse {
 
   private final int page;
 
-  @SerializedName("per_page")
   private final int perPage;
 
-  @SerializedName("total")
   private final int totalEntries;
 
-  @SerializedName("total_pages")
   private final int totalPages;
 
   @SerializedName("data")
-  private final List<StockPriceInfoByDate> stockInfo;
+  private final List<StockPrices> stockInfo;
 }
 
 /*

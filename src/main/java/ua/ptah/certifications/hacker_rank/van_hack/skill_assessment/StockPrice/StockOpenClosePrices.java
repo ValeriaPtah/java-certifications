@@ -43,8 +43,8 @@ class StockOpenClosePrices {
     String baseURL = "https://jsonmock.hackerrank.com/api/stocks/";
 
     for (LocalDate relevantDate : relevantDates) {
-      try (Reader bufferedReader = new BufferedReader(new InputStreamReader(new URL(baseURL + "?date=" + relevantDate.format(DATE_PATTERN)).openStream()))) {
-        List<StockPriceInfoByDate> stockPriceData = gson.fromJson(bufferedReader, StockListingResponse.class).getStockInfo();
+      try (Reader reader = new BufferedReader(new InputStreamReader(new URL(baseURL + "?date=" + relevantDate.format(DATE_PATTERN)).openStream()))) {
+        List<StockPrices> stockPriceData = gson.fromJson(reader, StockListingResponse.class).getStockInfo();
         if (stockPriceData.size() > 0) {
           openAndClosePrices.add(stockPriceData.get(0).getDate() + " " + stockPriceData.get(0).getOpenPrice() + " " + stockPriceData.get(0).getClosePrice());
         }
